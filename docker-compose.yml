@@ -1,0 +1,37 @@
+services:
+  db:
+    image: postgres:16
+    container_name: postgres_db
+    environment:
+      POSTGRES_DB: sistema_gestion
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Jupaca2.0
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: .
+      dockerfile: docker/backend/Dockerfile
+    container_name: fastapi_backend
+    env_file:
+      - backend/.env
+    ports:
+      - "8000:8000"
+    
+  frontend:
+    build:
+      context: .
+      dockerfile: docker/frontend/Dockerfile
+    container_name: react_frontend
+    ports:
+      - "5173:80"
+  
+volumes:
+  postgres_data:
+
+
+  
+  

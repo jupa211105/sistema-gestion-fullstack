@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+venv/
+.venv/
+
+# Environment variables
+.env
+*.env
+
+# Node
+node_modules/
+frontend/dist/
+
+# Testing
+.pytest_cache/
+.coverage
+
+# IDE
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
