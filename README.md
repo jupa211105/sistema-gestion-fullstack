@@ -40,6 +40,8 @@ El proyecto implementa autenticación mediante JWT, gestión de tareas por usuar
 
 ##  Arquitectura
 
+```text
+
 
                     ┌─────────────────┐
                     │     React       │
@@ -61,8 +63,13 @@ El proyecto implementa autenticación mediante JWT, gestión de tareas por usuar
                     │   PostgreSQL    │
                     │    Database     │
                     └─────────────────┘
+```
+---
+
 
 ##  Estructura del proyecto
+
+```text
 
 sistema-gestion-fullstack/
 │
@@ -133,6 +140,9 @@ sistema-gestion-fullstack/
 ├── docker-compose.yml
 ├── .gitignore
 └── README.md
+```
+
+---
 
 
 ## Funcionalidades
