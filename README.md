@@ -226,6 +226,7 @@ Para el cierre de sesión se utiliza el jti del token y se almacena como revocad
 ## Bases de datos
 El proyecto utiliza PostgreSQL.
 La conexión se configura mediante una variable de entorno:
+```text
 DATABASE_URL=postgresql+psycopg2://usuario:password@db:5432/sistema_gestion
 
 Cuando se ejecuta mediante Docker Compose, el hostname:
@@ -233,7 +234,12 @@ db
 
 corresponde al servicio PostgreSQL definido en docker-compose.yml.
 
+```
+
+
 ## Migraciones
+```text
+
 Para ejecutar las migraciones dentro del contenedor:
 docker compose exec backend alembic upgrade head
 
@@ -242,6 +248,7 @@ docker compose exec backend alembic revision --autogenerate -m "descripcion_de_l
 
 Después:
 docker compose exec backend alembic upgrade head
+```
 
 ## Docker
 
@@ -278,20 +285,26 @@ PostgreSQL utiliza un volumen Docker para conservar los datos cuando el contened
 
 El backend utiliza un archivo .env.
 Ejemplo:
-DATABASE_URL=postgresql+psycopg2://postgres:TU_PASSWORD@db:5432/sistema_gestion
+```text
 
+DATABASE_URL=postgresql+psycopg2://postgres:TU_PASSWORD@db:5432/sistema_gestion
 JWT_SECRET_KEY=TU_SECRET_KEY
 JWT_ALGORITHM=HS256
 JWT_ACCESS_TOKEN_EXPIRE_MINUTES=60
+```
 
 ### Pruebas
 El backend utiliza Pytest.
 Para ejecutar todas las pruebas localmente:
+```text
 cd backend
 python -m pytest
+```
 
 También pueden ejecutarse dentro del contenedor:
+```text
 docker compose exec backend python -m pytest
+```
 
 Las pruebas cubren principalmente:
 - Registro de usuarios.
