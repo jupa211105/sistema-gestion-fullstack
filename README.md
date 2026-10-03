@@ -330,8 +330,3 @@ El proyecto implementa varias medidas de seguridad:
 - Variables sensibles mediante .env.
 - Separación entre modelos, schemas, servicios y rutas.
 - Validación de datos mediante Pydantic.
-
-
-```text
-
-
