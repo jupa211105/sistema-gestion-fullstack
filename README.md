@@ -187,6 +187,9 @@ Operaciones disponibles:
 ## Autenticacion
 La API utiliza JWT para autenticar las peticiones protegidas.
 El flujo general es:
+```text
+
+
 1. Usuario inicia sesión
           │
           ▼
@@ -207,11 +210,17 @@ El flujo general es:
           │
           ▼
 7. Se permite el acceso al recurso
+```
+
 
 El token contiene información como:
+```text
+
 - sub → ID del usuario
 - jti → identificador único del token
 - exp → fecha de expiración
+```
+
 Para el cierre de sesión se utiliza el jti del token y se almacena como revocado.
 
 ## Bases de datos
@@ -238,6 +247,8 @@ docker compose exec backend alembic upgrade head
 
 Docker
 El proyecto utiliza tres servicios principales:
+```text
+
 ┌─────────────────────────┐
 │        frontend         │
 │      React + Nginx      │
@@ -257,6 +268,9 @@ El proyecto utiliza tres servicios principales:
 │       PostgreSQL 16     │
 │        Port 5432        │
 └─────────────────────────┘
+
+```
+
 
 PostgreSQL utiliza un volumen Docker para conservar los datos cuando el contenedor se recrea.
 
